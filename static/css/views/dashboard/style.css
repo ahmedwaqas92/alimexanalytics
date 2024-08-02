@@ -33,15 +33,25 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     flex-shrink: 0;
 }
 
-.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > input {
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > img:nth-of-type(1) {
+    margin-left: -5%;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > input {
     font-family: "Outfit";
-    font-size: 1.2vh;
+    font-size: 1.5vh;
     font-weight: 500;
     color: rgba(154, 157, 162, 1);
     background: transparent;
     border: transparent;
     outline: none;
+    margin-left: -20%;
 }
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > img:nth-of-type(2) {
+    margin-right: -4%;
+}
+
 
 .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > img:nth-of-type(2) {
    margin-left: -20%;
@@ -55,13 +65,13 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
 }
 
 .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(1) {
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > p:nth-of-type(1) {
-    margin-left: 5%;
+    margin-left: 3%;
     font-family: "Outfit";
-    font-size: 1.2vh;
+    font-size: 1.5vh;
     font-weight: 500;
     color: rgba(154, 157, 162, 1);
     background: transparent;
@@ -97,11 +107,19 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     font-family: "Outfit";
     font-weight: 500;
     color: rgba(154, 157, 162, 1);
-    padding-left: 5%;
-    font-size: 1.2vh;
+    font-size: 1.5vh;
     padding-top: 2%;
     padding-bottom: 2%;
     z-index: 2;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > .dropDownList > div {
+    margin: 0.5vh 0vw;
+    margin-right: 5vw;
+    width: 100%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 5%;
 }
 
 .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > .dropDownList > div:hover {
@@ -198,7 +216,7 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     color: rgba(67, 66, 66, 1);
     font-family: "Outfit";
     font-weight: 600;
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 .dashboardMain > .dashboardMainContent > .visualizationTop > li > a {
@@ -208,7 +226,7 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     color: rgba(184, 185, 187, 1);
     font-family: "Outfit";
     font-weight: 600;
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 .dashboardMain > .dashboardMainContent > .visualizationTop > li > a:hover {
@@ -218,11 +236,11 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     color: rgba(67, 66, 66, 1);
     font-family: "Outfit";
     font-weight: 600;
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 .dashboardMain > .dashboardMainContent > .dataCharts {
-    height: 24vh; /* Adjust this height as needed */
+    height: 60vh; /* Adjust this height as needed */
     width: 99.5%; /* Full width */
     box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 1);
@@ -239,7 +257,7 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
 /* The above code is for visualization Top */
 
 .dashboardMain > .dashboardMainContent > .scatterCharts {
-    height: 24vh; /* Adjust this height as needed */
+    height: 60vh; /* Adjust this height as needed */
     width: 99.5%; /* Full width */
     box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 1);
@@ -494,7 +512,7 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     /* The above code is for data cards */
 
     .dashboardMain > .dashboardMainContent > .dataCharts {
-        height: 24vh; /* Adjust this height as needed */
+        height: 60vh; /* Adjust this height as needed */
         width: 99.5%; /* Full width */
         box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 1);
@@ -506,18 +524,20 @@ linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
     .dataCharts canvas {
         width: 100% !important; /* Make the canvas take full width */
         height: auto !important; /* Maintain aspect ratio */
+        padding: 0;
     }
     
     
     /* The above code is for visualization Top */
     
     .dashboardMain > .dashboardMainContent > .scatterCharts {
-        height: 24vh; /* Adjust this height as needed */
+        height: 60vh; /* Adjust this height as needed */
         width: 99.5%; /* Full width */
         box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
         background: rgba(255, 255, 255, 1);
         border-radius: 1vh;
         margin-top: 5%;
+        padding: 0;
     }
     
     .scatterCharts canvas {

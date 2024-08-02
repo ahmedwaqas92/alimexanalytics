@@ -87,6 +87,7 @@ class dataPush():
 
             connectionString.commit()
             print("Data successfully pushed to database.")
+            connectionString.close()
   
         except sqlite3.Error as e:
             print(f"Database error: {e}")

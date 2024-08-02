@@ -56,19 +56,40 @@ function toggleCheckbox(checkboxId) {
 document.addEventListener('DOMContentLoaded', function() {
     const newChart = document.getElementById('barChart').getContext('2d');
 
-    const weightChartData = { 
+    // Assuming graphingData is an array of objects with 'workOrder' and 'weight' keys
+    const labels = graphingData.map(item => item.workOrder);
+    const weightdata = graphingData.map(item => parseFloat(item.weight));
+    const thicknessdata = graphingData.map(item => parseFloat(item.thickness));
+
+    function getChartPadding() {
+        // Check the window width and set padding accordingly
+        return window.innerWidth > 1350 ? { top: 50, bottom: 50, left: 50, right: 50 } : { top: 0, bottom: 0, left: 0, right: 0 };
+    }
+
+    const weightChartData = {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', "Mango", "Butter", "Silicon", "Diamond", 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', "Mango", "Butter"],
+            labels: labels,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3, 3, 4, 1, 2, 12, 19, 3, 5, 2, 3, 3, 4],
+                label: 'Work Orders by Weight',
+                data: weightdata,
+                backgroundColor: 'rgba(199, 200, 245, 1)',
+                // backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                // borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false, // Ensure the chart maintains the aspect ratio
+            layout: {
+                padding: {
+                    top: 50,    // Space above the chart
+                    bottom: 50, // Space below the chart
+                    left: 50,   // Space to the left of the chart
+                    right: 50   // Space to the right of the chart
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true,
@@ -78,6 +99,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: 'Outfit'
+                        }
+                    }
+                },
+                tooltip: {
+                    bodyFont: {
+                        family: 'Outfit'
+                    },
+                    titleFont: {
+                        family: 'Outfit'
+                    }
+                }
             }
         }
     };
@@ -85,16 +123,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const thicknessChartData = {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', "Mango", "Butter", "Silicon", "Diamond", 'Red', 'Blue'],
+            labels: labels,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3, 3, 4, 1, 2, 12, 19],
+                label: 'Work Orders by Thickness',
+                data: thicknessdata,
+                backgroundColor: 'rgba(220, 252, 231, 1)',
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false, // Ensure the chart maintains the aspect ratio
+            layout: {
+                padding: {
+                    top: 50,    // Space above the chart
+                    bottom: 50, // Space below the chart
+                    left: 50,   // Space to the left of the chart
+                    right: 50   // Space to the right of the chart
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true,
@@ -127,46 +174,45 @@ document.addEventListener('DOMContentLoaded', function() {
         const chartData = chartDataId === 'weightChartData' ? weightChartData : thicknessChartData;
         chart = new Chart(newChart, chartData);
     }
+
+    // Update padding on window resize
+    window.addEventListener('resize', function() {
+        chart.options.layout.padding = getChartPadding();
+        chart.update();
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const ctx = document.getElementById('scatterPlot').getContext('2d');
+    const dimensions = document.getElementById('scatterPlot').getContext('2d');
+
+    // Map the graphingData to include workOrder, x (length), and y (width)
+    const scatterDataPoints = graphingData.map(item => ({
+        x: parseFloat(item.length),
+        y: parseFloat(item.width),
+        workOrder: item.workOrder
+    }));
+
+    function getChartPadding() {
+        // Check the window width and set padding accordingly
+        return window.innerWidth > 1350 ? { top: 50, bottom: 50, left: 50, right: 50 } : { top: 0, bottom: 0, left: 0, right: 0 };
+    }
 
     const scatterPlotData = {
         type: 'scatter',
         data: {
             datasets: [{
-                label: 'Scatter Dataset',
-                data: [
-                    { x: -10, y: 0 },
-                    { x: -5, y: 5 },
-                    { x: 0, y: 10 },
-                    { x: 5, y: 5 },
-                    { x: 10, y: 0 },
-                    { x: 7, y: 3 },
-                    { x: -3, y: -7 },
-                    { x: 1, y: 8 },
-                    { x: -6, y: -3 },
-                    { x: 9, y: 7 },
-                    { x: -2, y: 6 },
-                    { x: 4, y: -4 },
-                    { x: 8, y: 2 },
-                    { x: 2, y: -6 },
-                    { x: -7, y: 4 },
-                    { x: 6, y: -1 },
-                    { x: -8, y: -5 },
-                    { x: 3, y: 9 },
-                    { x: 5, y: -2 },
-                    { x: -4, y: 1 }
-                ],
-                backgroundColor: 'rgba(75, 192, 192, 1)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                label: 'Width (mm) x Length (mm)',
+                data: scatterDataPoints,
+                backgroundColor: 'rgba(199, 200, 245, 1)',
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: {
+                padding: getChartPadding()
+            },
             scales: {
                 x: {
                     type: 'linear',
@@ -175,6 +221,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         font: {
                             family: 'Outfit'
                         }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Width (mm)',
+                        font: {
+                            family: 'Outfit',
+                            size: 16,
+                        }
                     }
                 },
                 y: {
@@ -182,6 +236,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     ticks: {
                         font: {
                             family: 'Outfit'
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Length (mm)',
+                        font: {
+                            family: 'Outfit',
+                            size: 16,
                         }
                     }
                 }
@@ -193,10 +255,31 @@ document.addEventListener('DOMContentLoaded', function() {
                             family: 'Outfit'
                         }
                     }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            const dataPoint = tooltipItem.raw;
+                            return `Work Order: ${dataPoint.workOrder}\nWidth: ${dataPoint.y} mm\nLength: ${dataPoint.x} mm`;
+                        }
+                    },
+                    bodyFont: {
+                        family: 'Outfit'
+                    },
+                    titleFont: {
+                        family: 'Outfit'
+                    }
                 }
             }
         }
     };
 
-    new Chart(ctx, scatterPlotData);
+    // Create the chart
+    let chart = new Chart(dimensions, scatterPlotData);
+
+    // Update padding on window resize
+    window.addEventListener('resize', function() {
+        chart.options.layout.padding = getChartPadding();
+        chart.update();
+    });
 });

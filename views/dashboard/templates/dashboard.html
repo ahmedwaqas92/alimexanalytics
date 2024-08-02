@@ -47,21 +47,21 @@
                     <div class="weight is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
                         <img src="../../../static/assets/images/totalweightimage.svg" alt="totalweightimage"/>
                         <div class="weightText is-flex is-flex-direction-column has-text-right">
-                                <p>{{ totalWeight }}</p>
-                                <p>Total Weight</p>
+                                <p>{{ totalweight }}</p>
+                                <p>Total Weight / Kg</p>
                         </div>
                     </div>
                     <div class="salesOrders is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
                         <img src="../../../static/assets/images/totalsoimage.svg" alt="totalsoimage"/>
                         <div class="salesOrdersText is-flex is-flex-direction-column has-text-right">
-                                <p>{{ totalSalesOrders }}</p>
+                                <p>{{ totalsalesorders }}</p>
                                 <p>Total Sales Orders</p>
                         </div>
                     </div>
                     <div class="purchaseOrders is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
                         <img src="../../../static/assets/images/totalpoimage.svg" alt="totalpoimage"/>
                         <div class="purchaseOrdersText is-flex is-flex-direction-column has-text-right">
-                                <p>{{ totalPurchaseOrders }}</p>
+                                <p>{{ totalpurchaseorders }}</p>
                                 <p>Total Purchase Orders</p>
                         </div>
                     </div>
@@ -70,12 +70,12 @@
             <div class="visualizationTop tabs is-boxed is-flex is-flex-direction-row is-align-items-center is-justify-content-flex-start">
                 <li class="is-active" onclick="selected(this, 'weightChartData')">
                     <a class="is-flex is-flex-direction-column">
-                        <span>Weight</span>
+                        <span>Weight (kg)</span>
                     </a>
                 </li>
                 <li onclick="selected(this, 'thicknessChartData')">
                     <a>
-                        <span>Thickness</span>
+                        <span>Thickness (mm)</span>
                     </a>
                 </li>
             </div>
@@ -89,5 +89,6 @@
         </div>
     </div>
     <script type="text/javascript">
+        const graphingData = {{ graphingData | tojson }};
     </script>
 {% endblock body %}
