@@ -1,0 +1,93 @@
+{% extends "dashboard_base.html" %}
+
+{% block title %}
+    Dashboard | Alimex
+{% endblock title %}
+
+{% block body %}
+    <div class="dashboardMain is-flex is-flex-direction-row">
+        {% include "navbarpostlogin.html" %}
+        <div class="dashboardMainContent is-flex is-flex-direction-column">
+            <div class="dashboardMainContentControls is-flex is-flex-direction-row">
+                <form class="is-flex is-flex-direction-row is-align-items-center is-justify-space_between" method="POST" action="{{url_for('dashboard_main.dashboard')}}">
+                    <p>Dashboard</p>
+                    <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-around" name=daterangediv>
+                        <img src="../../../static/assets/images/selectdateicon.svg" alt="selectdateicon"/>
+                        <input type="text" id="daterange" name="daterange" placeholder="Select Date">
+                        <img src="../../../static/assets/images/dropdownarrow.svg" alt="dropdownarrowicon"/>
+                    </div>
+                    <div class="is-flex is-flex-direction-column">
+                        <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-flex-start" onclick="toggleDropDown(event)">
+                            <img src="../../../static/assets/images/selectparticon.svg" alt="selectparticon"/>
+                            <p>Select Part</p>
+                            <img src="../../../static/assets/images/dropdownarrow.svg" alt="dropdownarrowicon"/>
+                        </div>
+                        <div class="dropDownList is-flex is-flex-direction-column" name="dropDownList" id="dropDownList">
+                            {% for element in dropdowndata %}
+                                <div class="is-flex is-flex-direction-row is-clickable" onclick="toggleCheckbox('checkbox{{ loop.index }}')">
+                                    <input type="checkbox" name="checkbox{{ loop.index }}" id="checkbox{{ loop.index }}"/>
+                                    <label for="checkbox{{ loop.index }}">{{ element }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button class="analyze is-flex is-flex-direction-row is-align-items-center is-justify-content-center is-text-centered" type="submit" id="analyze" name="analyze">Analyze</button>
+                </form>
+            </div>
+            <div class="mainDataCard is-flex is-flex-direction-column is-align-items-left is-justify-content-space-around">
+                <p>Sales Summary</p>
+                <div class="mainDataCardItems is-flex is-flex-direction-row is-align-items-center">
+                    <div class="workOrders is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
+                        <img src="../../../static/assets/images/workorderimage.svg" alt="workorderimage"/>
+                        <div class="workOrdersText is-flex is-flex-direction-column has-text-right">
+                                <p>{{ totalworkorders }}</p>
+                                <p>Total Work Orders</p>
+                        </div>
+                    </div>
+                    <div class="weight is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
+                        <img src="../../../static/assets/images/totalweightimage.svg" alt="totalweightimage"/>
+                        <div class="weightText is-flex is-flex-direction-column has-text-right">
+                                <p>{{ totalWeight }}</p>
+                                <p>Total Weight</p>
+                        </div>
+                    </div>
+                    <div class="salesOrders is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
+                        <img src="../../../static/assets/images/totalsoimage.svg" alt="totalsoimage"/>
+                        <div class="salesOrdersText is-flex is-flex-direction-column has-text-right">
+                                <p>{{ totalSalesOrders }}</p>
+                                <p>Total Sales Orders</p>
+                        </div>
+                    </div>
+                    <div class="purchaseOrders is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between is-clickable">
+                        <img src="../../../static/assets/images/totalpoimage.svg" alt="totalpoimage"/>
+                        <div class="purchaseOrdersText is-flex is-flex-direction-column has-text-right">
+                                <p>{{ totalPurchaseOrders }}</p>
+                                <p>Total Purchase Orders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="visualizationTop tabs is-boxed is-flex is-flex-direction-row is-align-items-center is-justify-content-flex-start">
+                <li class="is-active" onclick="selected(this, 'weightChartData')">
+                    <a class="is-flex is-flex-direction-column">
+                        <span>Weight</span>
+                    </a>
+                </li>
+                <li onclick="selected(this, 'thicknessChartData')">
+                    <a>
+                        <span>Thickness</span>
+                    </a>
+                </li>
+            </div>
+            <div class="dataCharts is-flex is-flex-direction-row">
+                <canvas class="barChart" id="barChart"></canvas>
+            </div>
+            <div class="scatterCharts is-flex is-flex-direction-row">
+                <canvas class="scatterPlot" id="scatterPlot"></canvas>
+            </div>
+            <p class="is-flex is-flex-direction-row is-align-items-center is-justify-content-center">@2024 Alimex ACP Asia. All Rights Received</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+{% endblock body %}

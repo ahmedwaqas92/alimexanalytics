@@ -1,0 +1,29 @@
+{% extends "navbarpostlogin_base.html" %}
+
+{% block body %}
+    <div class="navigationMain is-flex is-flex-direction-column is-align-items-center is-justify-content-flex-start">
+        <img src="../../../static/assets/images/alimexlogo.png" alt="alimexlogo"/>
+        <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-left is-clickable {% if current_page == 'dashboard' %}selected{% endif %}" onclick="dashboardRoute()">
+            <div class="icon" style="mask-image: url('../../../static/assets/images/dashboardicon.svg');"></div>
+            <p>Dashboard</p>
+        </div>
+        <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-left is-clickable {% if current_page == 'reports' %}selected{% endif %}" onclick="reportsRoute()">
+            <div class="icon" style="mask-image: url('../../../static/assets/images/reportsicon.svg');"></div>
+            <p>Reports</p>
+        </div>
+        <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-left is-clickable {% if current_page == 'profile' %}selected{% endif %}" onclick="profileRoute()">
+            <div class="icon" style="mask-image: url('../../../static/assets/images/profileicon.svg');"></div>
+            <p>Profile</p>
+        </div>
+        <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-left is-clickable" onclick="logout()">
+            <div class="icon" style="mask-image: url('../../../static/assets/images/logouticon.svg');"></div>
+            <p>Logout</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function dashboardRoute() {window.location.href="{{url_for('dashboard_main.dashboard')}}";}
+        function reportsRoute() {window.location.href="{{url_for('reports_main.reports')}}";}
+        function profileRoute() {window.location.href="{{url_for('profile_main.profile')}}";}
+        function logout() {window.location.href="{{url_for('logout_main.logout')}}";}
+    </script>
+{% endblock body %}

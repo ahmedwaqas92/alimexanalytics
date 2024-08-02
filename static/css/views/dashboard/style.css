@@ -1,0 +1,537 @@
+:root {
+    background: linear-gradient(0deg, rgb(250, 250, 250), rgb(250, 250, 250)),
+linear-gradient(89.78deg, rgb(250, 251, 253) 0.47%, rgb(250, 250, 252) 98.34%);
+
+}
+
+.dashboardMainContent {
+    height: 100%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form {
+    width: 70vw;
+    height: 5vh;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > p {
+    font-family: "Outfit";
+    font-weight: 600;
+    font-size: 3vh;
+    color: rgba(67, 66, 66, 1);
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div {
+    width: 15vw;
+    height: 75%;
+    margin-top: 0.2%;
+    margin-left: 3%;
+    background-color: rgba(249, 249, 249, 1);
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5vh;
+    flex-shrink: 0;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > input {
+    font-family: "Outfit";
+    font-size: 1.2vh;
+    font-weight: 500;
+    color: rgba(154, 157, 162, 1);
+    background: transparent;
+    border: transparent;
+    outline: none;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > img:nth-of-type(2) {
+   margin-left: -20%;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div {
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-bottom: 2%;
+    flex-shrink: 0;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(1) {
+    margin-left: 1%;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > p:nth-of-type(1) {
+    margin-left: 5%;
+    font-family: "Outfit";
+    font-size: 1.2vh;
+    font-weight: 500;
+    color: rgba(154, 157, 162, 1);
+    background: transparent;
+    border: transparent;
+    outline: none; 
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(2) {
+    margin-left: 48%;
+}
+
+
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > button {
+    height: 85%;
+    width: 10%;
+    margin-left: 2%;
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(93, 96, 239, 1);
+    color: rgba(255,255,255,1);
+    font-family: "Outfit";
+    font-size: 1.5vh;
+    font-weight: 600;
+    border-radius: 1vh;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > .dropDownList {
+    visibility: hidden;
+    width: 15vw;
+    background-color: rgba(249, 249, 249, 1);
+    box-shadow: 0px 1px 5.6px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 1vh;
+    font-family: "Outfit";
+    font-weight: 500;
+    color: rgba(154, 157, 162, 1);
+    padding-left: 5%;
+    font-size: 1.2vh;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    z-index: 2;
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > .dropDownList > div:hover {
+    background-color: rgba(233, 233, 233, 1);
+
+}
+
+.dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div > .dropDownList > div {
+    gap: 5%;
+}
+
+/* The above code is for dashboard controls */
+
+.dashboardMain > .dashboardMainContent > .mainDataCard {
+    height: 20vh;
+    margin-top: 2%;
+    border-radius: 1vh;
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 2%;
+    width: 80vw;
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > p {
+    font-family: "Outfit";
+    font-size: 2vh;
+    font-weight: 600;
+    color: rgba(67, 66, 66, 1);
+    margin-top: 1%;
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems {
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    height: 100%;
+    gap: 2%;
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div {
+    height: 100%;
+    width: 23%;
+    padding: 0% 1%;
+    border-radius: 1vh;
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > img {
+    margin-top: 10%;
+    height: 35%;
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(1) {
+    font-family: "Outfit";
+    font-size: 2.3vh;
+    font-weight: 600;
+    color: rgba(67, 66, 66, 1);
+
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(2) {
+    font-family: "Outfit";
+    font-size: 2vh;
+    font-weight: 500;
+    color: rgba(125, 127, 130, 1);
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(1) {
+    background-color: rgba(244, 232, 254, 1);
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(2) {
+    background-color: rgba(255, 244, 222, 1);
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(3) {
+    background-color: rgba(255, 226, 230, 1);
+}
+
+.dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(4) {
+    background-color: rgba(220, 252, 231, 1);
+}
+
+/* The above code is for data cards */
+
+.dashboardMain > .dashboardMainContent > .visualizationTop {
+    background-color: transparent;
+    margin-top: 1.5%;
+}
+
+
+.dashboardMain > .dashboardMainContent > .visualizationTop > .is-active > a {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,1);
+    color: rgba(67, 66, 66, 1);
+    font-family: "Outfit";
+    font-weight: 600;
+    font-size: 1.5vh;
+}
+
+.dashboardMain > .dashboardMainContent > .visualizationTop > li > a {
+    background-color: rgba(244, 242, 242, 1);
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    border: transparent;
+    color: rgba(184, 185, 187, 1);
+    font-family: "Outfit";
+    font-weight: 600;
+    font-size: 1.5vh;
+}
+
+.dashboardMain > .dashboardMainContent > .visualizationTop > li > a:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,1);
+    color: rgba(67, 66, 66, 1);
+    font-family: "Outfit";
+    font-weight: 600;
+    font-size: 1.5vh;
+}
+
+.dashboardMain > .dashboardMainContent > .dataCharts {
+    height: 24vh; /* Adjust this height as needed */
+    width: 99.5%; /* Full width */
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 1vh;
+    margin-top: -1%;
+}
+
+.dataCharts canvas {
+    width: 100% !important; /* Make the canvas take full width */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+
+/* The above code is for visualization Top */
+
+.dashboardMain > .dashboardMainContent > .scatterCharts {
+    height: 24vh; /* Adjust this height as needed */
+    width: 99.5%; /* Full width */
+    box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 1vh;
+    margin-top: 2%;
+}
+
+.scatterCharts canvas {
+    width: 100% !important; /* Make the canvas take full width */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+/* The above code is for visualization Bottom */
+
+.dashboardMain > .dashboardMainContent > p {
+    font-family: "Outfit";
+    font-weight: 600;
+    color: rgba(206, 207, 210, 1);
+    margin-top: 2%;
+}
+
+/* The above code is for Copyright */
+
+
+@media screen and (max-width: 1350px) {
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form {
+        width: 75vw;
+    }
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > p {
+        font-size: 2vh;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div {
+        width: 25vw;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > img:nth-of-type(1) {
+        height: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > input {
+        margin-top: 1%;
+        margin-left: -22%;
+        font-size: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div {
+        width: 25vw;
+        margin-top: 2%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(1) {
+        height: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > p:nth-of-type(1) {
+        font-size: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > button {
+        font-size: 1.0vh;
+    }
+
+    /* The above code is for dashboard controls */
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard {
+        width: 78vw;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > p {
+        font-family: "Outfit";
+        font-size: 2vh;
+        font-weight: 600;
+        color: rgba(67, 66, 66, 1);
+        margin-top: 1%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems {
+        margin-top: 1.5%;
+        margin-bottom: 2%;
+        height: 100%;
+        gap: 2%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div {
+        height: 100%;
+        width: 23%;
+        padding: 0% 1%;
+        border-radius: 1vh;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > img {
+        margin-top: 10%;
+        height: 35%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(1) {
+        font-family: "Outfit";
+        font-size: 2.3vh;
+        font-weight: 600;
+        color: rgba(67, 66, 66, 1);
+
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(2) {
+        font-family: "Outfit";
+        font-size: 2vh;
+        font-weight: 500;
+        color: rgba(125, 127, 130, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(1) {
+        background-color: rgba(244, 232, 254, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(2) {
+        background-color: rgba(255, 244, 222, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(3) {
+        background-color: rgba(255, 226, 230, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(4) {
+        background-color: rgba(220, 252, 231, 1);
+    }
+
+    /* The above code is for data cards */
+
+    /* The above code is for visualization Top */
+
+    /* The above code is for visualization Bottom */
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form {
+        width: 75vw;
+    }
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > p {
+        font-size: 1vh;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div {
+        width: 25vw;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > img:nth-of-type(1) {
+        height: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > input {
+        margin-top: 1%;
+        width: 80%;
+        margin-left: 5%;
+        font-size: 0.7vh;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(1) > img:nth-of-type(2) {
+        visibility: hidden;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div {
+        width: 25vw;
+        margin-top: 2%;
+
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(1) {
+        height: 50%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > p:nth-of-type(1) {
+        font-size: 0.7vh;
+        width: 80%;
+        margin-left: 5%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > div:nth-of-type(2) > div > img:nth-of-type(2) {
+        visibility: hidden;
+    }
+
+    .dashboardMain > .dashboardMainContent > .dashboardMainContentControls > form > button {
+        font-size: 1.0vh;
+    }
+
+    /* The above code is for dashboard controls */
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard {
+        width: 75vw;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > p {
+        font-family: "Outfit";
+        font-size: 2vh;
+        font-weight: 600;
+        color: rgba(67, 66, 66, 1);
+        margin-top: 1%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems {
+        margin-top: 1.5%;
+        margin-bottom: 2%;
+        height: 100%;
+        gap: 2%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div {
+        height: 100%;
+        width: 23%;
+        padding: 0% 1%;
+        border-radius: 1vh;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > img {
+        margin-top: 10%;
+        height: 15%;
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(1) {
+        font-family: "Outfit";
+        font-size: 1vh;
+        font-weight: 600;
+        color: rgba(67, 66, 66, 1);
+
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div > div > p:nth-of-type(2) {
+        font-family: "Outfit";
+        font-size: 0.65vh;
+        font-weight: 800;
+        color: rgba(125, 127, 130, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(1) {
+        background-color: rgba(244, 232, 254, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(2) {
+        background-color: rgba(255, 244, 222, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(3) {
+        background-color: rgba(255, 226, 230, 1);
+    }
+
+    .dashboardMain > .dashboardMainContent > .mainDataCard > .mainDataCardItems > div:nth-of-type(4) {
+        background-color: rgba(220, 252, 231, 1);
+    }
+
+    /* The above code is for data cards */
+
+    .dashboardMain > .dashboardMainContent > .dataCharts {
+        height: 24vh; /* Adjust this height as needed */
+        width: 99.5%; /* Full width */
+        box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 1);
+        border-radius: 1vh;
+        margin-top: -1%;
+    
+    }
+    
+    .dataCharts canvas {
+        width: 100% !important; /* Make the canvas take full width */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+    
+    
+    /* The above code is for visualization Top */
+    
+    .dashboardMain > .dashboardMainContent > .scatterCharts {
+        height: 24vh; /* Adjust this height as needed */
+        width: 99.5%; /* Full width */
+        box-shadow: 0px 1px 9.4px 0px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 1);
+        border-radius: 1vh;
+        margin-top: 5%;
+    }
+    
+    .scatterCharts canvas {
+        width: 100% !important; /* Make the canvas take full width */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+    
+    /* The above code is for visualization Bottom */
+
+    .dashboardMain > .dashboardMainContent > p {
+        font-family: "Outfit";
+        font-weight: 600;
+        color: rgba(206, 207, 210, 1);
+        margin-top: 2%;
+    }
+
+}

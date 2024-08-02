@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Alimex ACP Asia Sdn Bhd">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+    <meta name="author" content="Alimex ACP Asia Sdn Bhd">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- -->
+    
+    <!-- CDN Deployedment StyleSheets-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/views/login/style.css')}}"/>
+    <!-- -->
+
+    <!-- CDN Deployedment JavaScript-->
+    <script src="{{ url_for('static', filename='/javascript/script.js')}}"></script>
+    <!-- -->
+
+    <!-- CDN Deployedment Fonts and Animations-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- -->
+    
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+</head>
+
+<body>
+    {% block body %}{% endblock body %}
+</body>
+
+</html>

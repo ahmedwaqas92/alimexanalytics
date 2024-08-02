@@ -1,0 +1,137 @@
+.navigationMain {
+    width: 15vw;
+    height: 100vh;
+    gap: 2%;
+    background: rgba(255,255,255,1);
+}
+
+.navigationMain > img {
+    height: 5%;
+    width: 50%;
+    margin-top: 15%;
+}
+
+.navigationMain > div {
+    width: 80%;
+    gap: 10%;
+    height: 5%;
+    color: rgba(154, 157, 162, 1);
+
+}
+
+.navigationMain > div:hover {
+    color: rgba(0,0,0,1);
+}
+
+.navigationMain > div:hover > .icon {
+    background-color: rgba(0,0,0,1);
+}
+
+.navigationMain > div:nth-of-type(1) {
+    margin-top: 15%;
+}
+
+.navigationMain > div > img {
+    margin-left: 10%;
+}
+
+.navigationMain > .selected {
+    background: rgba(93, 96, 239, 1);
+    color: rgba(255,255,255,1);
+    border-radius: 1vh;
+}
+
+.navigationMain > .selected:hover {
+    color: rgba(255,255,255,1)
+}
+
+.navigationMain > div > .icon {
+    background-color: rgba(154, 157, 162, 1);
+    margin-left: 10%;
+
+}
+
+.navigationMain > .selected > .icon {
+    background-color: rgba(255,255,255,1);
+    margin-left: 10%;
+}
+
+.navigationMain > .selected:hover > .icon {
+    background-color: rgba(255,255,255,1);
+}
+
+.navigationMain > div > p {
+    font-family: "Outfit";
+    font-weight: 600;
+    font-size: 1.5vh;
+}
+
+@media screen and (max-width: 1350px) {
+    .navigationMain {
+        width: 18vw;
+        height: 100vh;
+        gap: 2%;
+    }
+
+    .navigationMain > img {
+        height: 4%;
+        width: 50%;
+        margin-top: 15%;
+    }
+
+    .navigationMain > div {
+        width: 90%;
+        gap: 5%;
+        height: 5%; 
+        color: rgba(154, 157, 162, 1);
+    
+    }
+
+    .navigationMain > .selected {
+        background: rgba(93, 96, 239, 1);
+        color: rgba(255,255,255,1);
+        border-radius: 1vh;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .navigationMain {
+        width: 18vw;
+        height: 100vh;
+        gap: 2%;
+    }
+
+    .navigationMain > img {
+        height: 2.5%;
+        width: 45%;
+        margin-top: 15%;
+    }
+
+    .navigationMain > div {
+        width: 50%;
+        gap: 5%;
+        height: 5%; 
+        color: rgba(154, 157, 162, 1);
+    
+    }
+
+    .navigationMain > div > .icon {
+        margin-left: 25%;
+    }
+
+    .navigationMain > .selected > .icon {
+        margin-left: 15%;
+    }
+
+    .navigationMain > .selected {
+        background: rgba(93, 96, 239, 1);
+        color: rgba(255,255,255,1);
+        border-radius: 1vh;
+    }
+
+    .navigationMain > div > p {
+        visibility: hidden;
+    }
+
+}

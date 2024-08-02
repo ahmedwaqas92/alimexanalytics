@@ -1,0 +1,76 @@
+{% extends "login_base.html" %}
+
+{% block title %}
+    Login | Alimex
+{% endblock title %}
+
+{% block body %}
+    <div class="loginMain is-flex is-flex-direction-row is-justify-content-space-evenly">
+        <div class="is-flex is-flex-direction-row">
+            <img src="../../../static/assets/images/alimexlogo.png" alt="alimexlogo"/>
+            <form class="loginForm is-flex is-flex-direction-column is-align-items-center is-justify-content-center" method="POST" action="{{url_for('login_main.login')}}">
+                <p class="has-text-centered">LOGIN</p>
+                <p class="has-text-centered">Login with username or email address</p>
+                <div class="loginFormUsername is-flex is-flex-direction-row is-align-items-center">
+                    <img src="../../../static/assets/images/usernameimage.svg" alt="usernameimage"/>
+                    <input type="text" placeholder="Username/Email" id="usernameInput" name="usernameInput"/>
+                </div>
+                <div class="loginFormPassword is-flex is-flex-direction-row is-align-items-center">
+                    <img src="../../../static/assets/images/passwordimage.svg" alt="passwordimage"/>
+                    <input type="password" placeholder="Password" id="passwordInput" name="passwordInput"/>
+                </div>
+                <button type="submit" id="loginButton" name="loginButton">Login</button>
+            </form>
+        </div>
+        <div class="is-flex is-flex-direction-row">
+        </div>
+        {% if prompt %}
+            <script>
+                alert("{{ prompt }}");
+            </script>
+        {% endif %}
+    </div>
+    <script type="text/javascript">
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function disableScroll() {
+            // Add touchmove event listener to document body
+            document.body.addEventListener('touchmove', preventDefault, { passive: false });
+            // Add touchstart event listener to document body
+            document.body.addEventListener('touchstart', preventDefault, { passive: false });
+
+            // Allow touch events on input fields
+            let inputs = document.querySelectorAll('input, textarea, select, button');
+            inputs.forEach(input => {
+                input.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                });
+                input.addEventListener('touchmove', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        }
+
+        function enableScroll() {
+            // Remove touchmove event listener from document body
+            document.body.removeEventListener('touchmove', preventDefault);
+            // Remove touchstart event listener from document body
+            document.body.removeEventListener('touchstart', preventDefault);
+
+            // Remove touch event listeners from input fields
+            let inputs = document.querySelectorAll('input, textarea, select, button');
+            inputs.forEach(input => {
+                input.removeEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                });
+                input.removeEventListener('touchmove', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        }
+
+        disableScroll();
+    </script>
+{% endblock body %}
