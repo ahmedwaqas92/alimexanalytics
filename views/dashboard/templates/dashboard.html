@@ -24,7 +24,7 @@
                         </div>
                         <div class="dropDownList is-flex is-flex-direction-column" name="dropDownList" id="dropDownList">
                             {% for element in dropdowndata %}
-                                <div class="is-flex is-flex-direction-row is-clickable" onclick="toggleCheckbox('checkbox{{ loop.index }}')">
+                                <div class="is-flex is-flex-direction-row is-clickable" onclick="toggleCheckbox(event, 'checkbox{{ loop.index }}')">
                                     <input type="checkbox" name="parts" id="checkbox{{ loop.index }}" value="{{ element }}"/>
                                     <label for="checkbox{{ loop.index }}">{{ element }}</label>
                                 </div>

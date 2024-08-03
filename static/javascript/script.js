@@ -46,7 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function toggleCheckbox(checkboxId) {
+function toggleCheckbox(event, checkboxId) {
+    // Ensure event.target is an element
+    if (!event.target || !checkboxId) return;
+
+    // If the click is on the checkbox or its label, do nothing
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'LABEL') return;
+
+    // Toggle the checkbox
     var checkbox = document.getElementById(checkboxId);
     if (checkbox) {
         checkbox.checked = !checkbox.checked;
