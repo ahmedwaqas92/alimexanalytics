@@ -53,9 +53,11 @@ function toggleCheckbox(checkboxId) {
     }
 }
 
+let chart;
+
 document.addEventListener('DOMContentLoaded', function() {
     const newChart = document.getElementById('barChart').getContext('2d');
-
+    
     // Assuming graphingData is an array of objects with 'workOrder' and 'weight' keys
     const labels = graphingData.map(item => item.workOrder);
     const weightdata = graphingData.map(item => parseFloat(item.weight));
@@ -71,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Work Orders by Weight',
+                label: `Work Orders by Weight (${startDate} to ${endDate})`,
                 data: weightdata,
                 backgroundColor: 'rgba(199, 200, 245, 1)',
                 // backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -125,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Work Orders by Thickness',
+                label: `Work Orders by Thickness (${startDate} to ${endDate})`,
                 data: thicknessdata,
                 backgroundColor: 'rgba(220, 252, 231, 1)',
                 borderWidth: 1
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    let chart = new Chart(newChart, weightChartData);
+    chart = new Chart(newChart, weightChartData);   
 
     window.selected = function(element, chartDataId) {
         // Get all li elements
@@ -170,7 +172,10 @@ document.addEventListener('DOMContentLoaded', function() {
         element.classList.add('is-active');
         
         // Update the chart with the selected data
-        chart.destroy();
+         // Destroy the previous chart instance before creating a new one
+         if (chart) {
+            chart.destroy();
+        }
         const chartData = chartDataId === 'weightChartData' ? weightChartData : thicknessChartData;
         chart = new Chart(newChart, chartData);
     }
@@ -201,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'scatter',
         data: {
             datasets: [{
-                label: 'Width (mm) x Length (mm)',
+                label: `Width (mm) x Length (mm) (${startDate} to ${endDate})`,
                 data: scatterDataPoints,
                 backgroundColor: 'rgba(199, 200, 245, 1)',
                 borderWidth: 1

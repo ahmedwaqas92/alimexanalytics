@@ -25,7 +25,7 @@
                         <div class="dropDownList is-flex is-flex-direction-column" name="dropDownList" id="dropDownList">
                             {% for element in dropdowndata %}
                                 <div class="is-flex is-flex-direction-row is-clickable" onclick="toggleCheckbox('checkbox{{ loop.index }}')">
-                                    <input type="checkbox" name="checkbox{{ loop.index }}" id="checkbox{{ loop.index }}"/>
+                                    <input type="checkbox" name="parts" id="checkbox{{ loop.index }}" value="{{ element }}"/>
                                     <label for="checkbox{{ loop.index }}">{{ element }}</label>
                                 </div>
                             {% endfor %}
@@ -90,5 +90,7 @@
     </div>
     <script type="text/javascript">
         const graphingData = {{ graphingData | tojson }};
+        const startDate = "{{ start_date }}";
+        const endDate = "{{ end_date }}";
     </script>
 {% endblock body %}

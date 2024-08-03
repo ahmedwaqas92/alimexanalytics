@@ -23,7 +23,7 @@ class dashboardDeafults():
         workorder_results = connection.fetchall()
         connectionString.close()
         return workorder_results
-    def dataCards():
+    def dataCards(startdate, enddate, partnames):
         cardData = {
             "totalWorkOrders": 0,
             "totalWeight": 0,
@@ -32,8 +32,8 @@ class dashboardDeafults():
         }
         
         graphingData = []
-
-        forCardValues = dashboardDeafults.fetchWorkOrder(str((datetime.now() - timedelta(days=15)).strftime('%Y-%m-%d')), str(datetime.now().strftime('%Y-%m-%d')), partnames=dashboardDeafults.partDropDown())
+        forCardValues = dashboardDeafults.fetchWorkOrder(startdate, enddate, partnames)
+        graphingData.clear()
         
         for row in forCardValues:
             if row[0]:
