@@ -105,15 +105,12 @@ class tulipFetch():
                 response = tulipFetch().errorHandling()
                 return response["paginationError"]
     def dataFetch(self, endpoint, email, password):
-        service = Service()
-        service.log_path = "chromedriver.log"
-        service.log_level = "DEBUG"
         options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
         options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36")
         options.add_argument("--headless")
-        # options.add_argument('--no-sandbox')
         # options.add_argument('--disable-dev-shm-usage')
-        self.driver = webdriver.Chrome(service=service, options=options)
+        self.driver = webdriver.Chrome(options=options)
         try:
             self.driver.get(endpoint)
             try:
