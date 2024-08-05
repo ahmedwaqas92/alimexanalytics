@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../../")
 from libraries.libraries import *
-from processes.datafetch.datafetch import data
+from processes.datafetch.dataFetch import data
 from schema.connectionstring.connection import databaseString
 
 
@@ -82,6 +82,7 @@ class dataPush():
                 """
             
             for record in data:
+                print(f"Inserting record: {record}")
                 link.execute(insert_sql, record)
                 
 

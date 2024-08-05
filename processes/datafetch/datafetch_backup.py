@@ -75,28 +75,39 @@ class tulipFetch():
                 response = tulipFetch().errorHandling()
                 return response["noRecordFound"]
     def pagination(self):
-        data.clear()
-        n = 0
-        while True:
-            offset = n * 50
-            page_url = payload["tableLink"] + str(offset)
-            self.driver.execute_script(f"window.location.href='{page_url}'")
-            try:
-                time.sleep(5)
-                outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-kAKMhj.eLYOwj").get_attribute("outerHTML")
-                self.recordFetch(outerHTML)
-                print(f"Fetched data from page {n + 1}")
-                
-                # Check if pagination controls are available
+        def pageNavigation(last_page):
+            data.clear()
+            for n in range(1, last_page+1):
+                offset = (n-1) * 50
+                page_url = payload["tableLink"] + str(offset)
+                self.driver.execute_script(f"window.location.href='{page_url}'")
+                time.sleep(2)
                 try:
-                    self.driver.find_element(By.CSS_SELECTOR, '[data-testid="pagination-controls"]')
-                    n += 1
-                except NoSuchElementException:
-                    print("No more pages available.")
+                    time.sleep(5)
+                    outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-kAKMhj.eLYOwj").get_attribute("outerHTML")
+                    self.recordFetch(outerHTML)
+                    print(f"Fetched data from page {n}")
+                except:
+                    response = tulipFetch().errorHandling()
+                    return response["outerHTMLError"]
+        while True:
+            try:
+                pagination_controls = self.driver.find_element(By.CSS_SELECTOR, '[data-testid="pagination-controls"]')
+                next_button = pagination_controls.find_elements(By.TAG_NAME, "button")[-1]
+                if "See more pages" in next_button.get_attribute("aria-label"):
+                    time.sleep(20)
+                    self.driver.execute_script("arguments[0].click();", next_button)
+                    # next_button.click()
+                    print("Clicked 'See more pages' button")
+                else:
+                    final_page = int(next_button.get_attribute("aria-label").split("e ")[1])
+                    last_page = int(final_page)
+                    print(f"Final page number: {last_page}")
+                    pageNavigation(last_page)
                     break
-            except TimeoutException:
+            except:
                 response = tulipFetch().errorHandling()
-                return response["outerHTMLError"]
+                return response["paginationError"]
     def dataFetch(self, endpoint, email, password):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
@@ -148,11 +159,11 @@ class tulipFetch():
         except: 
             response = tulipFetch().errorHandling()
             self.driver.quit()
-            return response["endpointError"]
+            return response["endpointError"] 
     def processValidation(self, email, password):
         print("sendingPayload")
         self.dataFetch(payload["endpoint"], email, password)
         response = self.errorHandling()
         return response["success"]
-    
+
 tulipFetch().processValidation(payload["email"], payload["password"])
