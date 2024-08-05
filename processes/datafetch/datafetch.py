@@ -81,8 +81,9 @@ class tulipFetch():
             offset = n * 50
             page_url = payload["tableLink"] + str(offset)
             self.driver.execute_script(f"window.location.href='{page_url}'")
+            print("at Pagination")
             try:
-                time.sleep(5)
+                time.sleep(20)
                 outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-kAKMhj.eLYOwj").get_attribute("outerHTML")
                 self.recordFetch(outerHTML)
                 print(f"Fetched data from page {n + 1}")
