@@ -75,15 +75,14 @@ class tulipFetch():
                 response = tulipFetch().errorHandling()
                 return response["noRecordFound"]
     def pagination(self):
-        data.clear()
         n = 0
         while True:
             offset = n * 50
             page_url = payload["tableLink"] + str(offset)
             self.driver.execute_script(f"window.location.href='{page_url}'")
+            time.sleep(10)
             print("at Pagination")
             try:
-                time.sleep(20)
                 outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-kAKMhj.eLYOwj").get_attribute("outerHTML")
                 self.recordFetch(outerHTML)
                 print(f"Fetched data from page {n + 1}")
@@ -132,6 +131,7 @@ class tulipFetch():
                         time.sleep(5)
                         print("Found sorting option")
                         self.driver.find_element(By.XPATH, '/html/body/div[13]/div/ul/li[5]/button').click()
+                        print("Checking Button Press")
                         self.pagination()
                         self.driver.quit()
                     except:
