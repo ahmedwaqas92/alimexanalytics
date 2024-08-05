@@ -1,7 +1,7 @@
 import sys
 sys.path.append("../../")
 from libraries.libraries import *
-from processes.datafetch.dataFetch import data
+from processes.datafetch.datafetch import data
 from schema.connectionstring.connection import databaseString
 
 
