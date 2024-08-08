@@ -13,7 +13,7 @@
                     <p>Dashboard</p>
                     <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-around" name=daterangediv>
                         <img src="../../../static/assets/images/selectdateicon.svg" alt="selectdateicon"/>
-                        <input type="text" id="daterange" name="daterange" placeholder="Select Date">
+                        <input type="text" id="daterange" name="daterange" placeholder="Select Date" required>
                         <img src="../../../static/assets/images/dropdownarrow.svg" alt="dropdownarrowicon"/>
                     </div>
                     <div class="is-flex is-flex-direction-column">
@@ -92,5 +92,7 @@
         const graphingData = {{ graphingData | tojson }};
         const startDate = "{{ start_date }}";
         const endDate = "{{ end_date }}";
+
+
     </script>
 {% endblock body %}
