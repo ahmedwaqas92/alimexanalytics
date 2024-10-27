@@ -84,7 +84,7 @@ class tulipFetch():
             print("at Pagination")
             try:
                 print("beforeOuterHTML")
-                outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-kAKMhj.eLYOwj").get_attribute("outerHTML")
+                outerHTML = self.driver.find_element(By.CSS_SELECTOR, "div.sc-iAbQMe.bYuLjp").get_attribute("outerHTML")
                 print("afterOuterHTML")
                 self.recordFetch(outerHTML)
                 print(f"Fetched data from page {n + 1}")
